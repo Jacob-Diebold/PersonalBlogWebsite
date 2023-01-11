@@ -1,0 +1,10 @@
+<%- include("partials/header.ejs") %> 
+<div>
+
+  <% posts.forEach(post => { %>
+    <h1><a class="a-title" href="/post/<%= post._id %> "> <%=post.title %></a> </h1>
+    <p> <%= _.truncate(post.body, {'length': 100, 'separator': ' ','omission':' ... ' })  %><a href="/post/<%= post._id %>"> more</a>  </p>
+  <% }) %>
+  </div>
+
+<%- include("partials/footer.ejs") %> 
